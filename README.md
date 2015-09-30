@@ -26,8 +26,8 @@ ee()->eeshim_model->cropImage(
 );
 ```
 
-**In-Scope**
-_The Callback Style approach loses the scope of the calling code, so in many instances, the following approach may be preferred._
+**In-Scope**   
+_The Callback Style approach loses the scope of the calling code, so in many instances the following approach may be preferred._
 ```php
 $obj = ee()->eeshim_model->cropImage(array(
     'in' => 'full.jpg', 
