@@ -116,22 +116,6 @@ class eeshim_parent
 	// ---
 
 	/**
-	 * Calls the run() method in the shim class
-	 * 
-	 * @param void
-	 * @return mixed Passes back the return value of the shim's run() method; 
-	 * If the method does not exist, will return null.
-	 * @access public
-	 */
-	public function execute()
-	{
-		return method_exists($this, 'run') ? 
-			 call_user_func_array(array($this, 'run'), $this->params) : null;
-	}
-
-	// ---
-
-	/**
 	 * Get a value from the $params property array
 	 * 
 	 * @param string $paramName For array children, separate the keys with 
@@ -224,9 +208,9 @@ class eeshim_parent
 	 * @param array $data An array of values to be passed to the closure as 
 	 * the single parameter
 	 * @return mixed The return value of the closure
-	 * @access public
+	 * @access protected
 	 */
-	public function success($data=array())
+	protected function success($data=array())
 	{
 		$this->successData = $data;
 
@@ -250,9 +234,9 @@ class eeshim_parent
 	 * error message string, to be passed to the closure as the first parameter
 	 * @param array $data Optional data to be passed to the closure as the second parameter
 	 * @return mixed The return value of the closure
-	 * @access public
+	 * @access protected
 	 */
-	public function fail($errors=array(), $data=array())
+	protected function fail($errors=array(), $data=array())
 	{
 		$this->errors = $errors;
 		$this->errorData = $data;

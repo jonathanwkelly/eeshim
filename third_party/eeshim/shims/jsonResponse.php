@@ -40,7 +40,7 @@ class eeshim_jsonResponse extends eeshim_parent
 	/**
 	 * Outputs a JSON object of either a success or error response
 	 */
-	function run()
+	public function run()
 	{
 		extract($this->params);
 

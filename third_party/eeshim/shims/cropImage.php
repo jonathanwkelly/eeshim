@@ -45,7 +45,7 @@ class eeshim_cropImage extends eeshim_parent
 	/**
 	 * Performs the file crop
 	 */
-	function run()
+	public function run()
 	{
 		// validate the params
 		if(!file_exists($this->getParam('in')) || !is_readable($this->getParam('in')))
